@@ -11,8 +11,8 @@
 <table>
 <tr>
    <td>
-     <%= image_tag 'no_image.jpg' %>
-     <%= @book.user.name %>
+      <%= image_tag 'no_image.jpg' %>
+      <%= @book.user.name %>
    </td>
    <td>
       <%= @book.title  %>
@@ -21,10 +21,14 @@
       <%= @book.body %>
    </td>
    <td>
-     Edit
+      <% if @book.user == current_user %>
+       <%= link_to "Edit", edit_book_path %>
+      <% end %>
    </td>
    <td>
-     Destroy
+      <% if @book.user == current_user %>
+       <%= link_to "Destroy", book_path(@book), method: :delete %>
+      <% end %>
    </td>
 </tr>
 </table>
