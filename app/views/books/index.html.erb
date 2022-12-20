@@ -6,3 +6,29 @@
     <%= f.text_area :body %>
    <%= f.submit 'Create Book' %>
 <% end %>
+
+<h1>Books</h1>
+<table>
+<thead>
+<tr>
+ <th><h4>Title</h4></th>
+ <th><h4>Opinion</h4></th>
+</tr>
+</thead>
+
+<% @books.each do |book| %>
+<tbody>
+<tr>
+   <td>
+     <%= image_tag 'no_image.jpg' %>
+   </td>
+   <td>
+      <%= book.title  %>
+   </td>
+   <td>
+      <%= book.body %>
+   </td>
+</tr>
+</tbody>
+<% end %>
+</table>
