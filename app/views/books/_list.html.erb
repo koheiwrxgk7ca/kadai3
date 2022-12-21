@@ -1,0 +1,25 @@
+<h1>User info</h1>
+<%= form_with model: user do |f| %>
+
+<%= image_tag user.get_profile_image(100,100) %>
+<table>
+<tbody>
+<tr>
+   <th>
+     name
+   </th>
+   <th>
+     <%= user.name %>
+   </th>
+</tr>
+<tr>
+   <th>
+     Introduction
+   </th>
+   <th>
+     <%= user.introduction %>
+   </th>
+</tr>
+</tbody>
+<% end %>
+</table>

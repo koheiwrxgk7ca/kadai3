@@ -1,5 +1,11 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<%= render 'list', user: @user %>
+
 <h1>New book</h1>
- <%= form_with model: @booknew do |f| %>
+ <%= form_with model: @book1 do |f| %>
    <h4>Title</h4>
     <%= f.text_field :title %>
    <h4>Opinion</h4>
