@@ -1,8 +1,9 @@
-<h1>User info</h1>
+<div class="col-md-3">
+<h2>User info</h2>
 <%= form_with model: user do |f| %>
 
 <%= image_tag user.get_profile_image(100,100) %>
-<table>
+<table class="table">
 <tbody>
 <tr>
    <th>
@@ -14,7 +15,7 @@
 </tr>
 <tr>
    <th>
-     Introduction
+     introduction
    </th>
    <th>
      <%= user.introduction %>
@@ -23,3 +24,17 @@
 </tbody>
 <% end %>
 </table>
+
+
+   
+
+<h2 class="mt-3">New book</h2>
+ <%= form_with model: @book1 do |f| %>
+   <h7>Title</h7><br>
+    <%= f.text_field :title, class:"form-control book_title" %>
+   <p id="notice"></p>
+   <h7>Opinion</h7><br>
+    <%= f.text_area :body, class:"form-control book_body" %><br>
+   <%= f.submit 'Create Book', class:"btn btn-success" %>
+<% end %>
+ </div>
